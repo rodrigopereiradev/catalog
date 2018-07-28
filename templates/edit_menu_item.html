@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Item</title>
+</head>
+<body>
+
+    <Header>
+        <h1>Search Food</h1>
+    </Header>
+
+    <h2>{{ item.name }}'s item</h2>
+
+    <h2>Edit Item</h2>
+
+    <form action="{{ url_for('edit_menu_item', restaurant_id = restaurant_id, item_id = item_id) }}" method="POST">
+        <label>Name:</label><br>
+        <input type="text" value="{{ item.name }}" size="30" name="name"/><br>
+        <label>Description:</label><br>
+        <textarea name="description"  cols="30" rows="3"></textarea> <br>
+        <label>Price:</label><br>
+        <input type="text" value="{{ item.price }}" size="8" name="price"/><br>
+        <label>Course:</label><br>
+        <select name="course" >
+            <option value="Entree">Entree</option>
+            <option value="Appetizer">Appetizer</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Dessert">Beverage</option>
+        </select><br>
+        <input type="submit" value="Create">
+
+    </form>
+
+    <a href="{{ url_for('retrieve_menu_items', restaurant_id = restaurant_id) }}">Back to Catalog</a>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Restaurant</title>
+</head>
+<body>
+
+    <Header>
+        <h1>Search Food</h1>
+    </Header>
+
+    <h2>New Restaurant</h2>
+
+    <form action="{{ url_for('create_restaurant') }}" method="POST">
+        <label>Name:</label><br>
+        <input type="text" size="30" name="name">
+        <input type="submit" value="Create"> 
+    </form>
+
+    <a href="{{ url_for('retrieve_restaurants') }}">Back to Catalog</a>
+    
+</body>
+</html>

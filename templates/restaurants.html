@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='reset.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:light,bold" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <main class="container-fluid main-content">
+        <Header class="header-content">
+            <h1>Search Food</h1>
+            <img class="image-banner" src="static/foods.png" alt="banner">
+        </Header>
+        <div class="login-logout">
+            <a href="#">logout</a>
+        </div>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    
+    
+        <div>
+            <a href="{{ url_for('create_restaurant') }}">Add a new restaurant</a>
+        </div>
+    
+        <div class="container-fluid">
+            {% for restaurant in restaurants %}
+            <div class="restaurant-content">
+                <span class="restaurant-name">{{ restaurant.name }}</span> <br>
+                <a class="btn btn-common " href="{{ url_for('retrieve_menu_items', restaurant_id = restaurant.id) }}">Open Menu</a>
+                <a class="btn btn-common" href="{{ url_for('edit_restaurant', restaurant_id = restaurant.id) }}">Edit</a>
+                <a class="btn btn-remove" href="{{ url_for('delete_restaurant', restaurant_id = restaurant.id) }}">Remove</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
