@@ -1,7 +1,3 @@
-import sys
-
-sys.path.insert(0, '/var/www/html/catalog/catalog_controller')
-
 import catalog_controller as controller
 
 from flask import Flask
