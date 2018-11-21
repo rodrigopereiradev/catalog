@@ -1,19 +1,23 @@
-
 .main-content {
     margin: 0px;
     max-width: 100%;
 }
 
 .header-content {
-    font-family: 'Oswald', sans-serif;
-    font-size: 5px;
-    font-weight: bold;
-    color: black;
+    background-color: #0099CC;
     padding: 10px 0px 10px 0px
 }
 
-h1 {
+.page-name {
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    color: white;
+}
+
+h2, h3 {
+    font-family: 'Oswald', sans-serif;
 }
 
 .image-banner {
@@ -28,13 +32,19 @@ h1 {
 
 .restaurant-content {
     align-items: center;
+    font-family: 'Open Sans', sans-serif;
     display: inline-block;
     margin: 5px 0px 5px 0px;
     padding: 10px;
     width: 33%;
     display: inline-block;
-    border: solid 1px #56BAEC;
-    border-radius: 5px;
+}
+
+.menu-content {
+    font-family: 'Open Sans', sans-serif;
+    width: 49%;
+    padding: 10px;
+    margin: 5px;
 }
 
 .restaurant-name {
@@ -42,13 +52,42 @@ h1 {
     font-size: 1.5em;
 }
 
-.btn-remove {
-    background-color: rgb(244, 247, 83);
+.restaurant-name-menu {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    color: #B0E57C;
+}
+
+.title-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    margin: 5px 0px 5px 0px;
+}
+
+.item-info {
+    margin-top: 1px;
+}
+
+form {
+    margin: 3% 20% 0% 20%; 
+}
+
+p, li {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.btn-common {
+    background-color: #8C489F;
     color: white;
 }
 
-.btn-common {
-    background-color: #56BAEC;
-    color: white;
+.login-box {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.icon-login {
+    margin-top: 2%;
 }
 

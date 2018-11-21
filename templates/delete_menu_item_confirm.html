@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Remove Restaurant</title>
+    <title>Remove Restaurant</title><link rel=stylesheet type=text/css href="{{ url_for('static', filename='reset.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:light,bold" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-
-    <Header>
-        <h1>Search Food</h1>
-    </Header>
-
-    <h2>Remove the Restaurant</h2>
-
-    <p> Are you sure you want to delete {{item.name}}? </p>
-
-    <form action="{{ url_for('delete_menu_item', restaurant_id = restaurant_id, item_id = item.id) }}" method="POST">
-        <input type="submit" value="Yes">
-        <a href="{{ url_for('retrieve_menu_items', restaurant_id = restaurant_id) }}">Back to Catalog</a>
-    </form>
-       
+    <main class="container-fluid main-content">
+        <div class="login-logout">
+            <a href="{{ url_for('logout') }}">logout</a>
+        </div>
+        <Header class="header-content">
+            <h1 class="page-name">Search Food</h1>
+        </Header>
+        <form action="{{ url_for('delete_menu_item', restaurant_id = restaurant_id, item_id = item.id) }}" method="POST">
+            <div class="form-group">
+                <h2  class="title-name" >Remove the menu item</h2>
+                <p> Are you sure you want to delete {{item.name}}? </p>
+                <input class="btn btn-danger" type="submit" value="Remove">
+                <a class="btn btn-link" href="{{ url_for('retrieve_menu_items', restaurant_id = restaurant_id) }}">Back to menu</a>
+            </div>    
+        </form>
+    </main>
 </body>
 </html>

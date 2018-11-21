@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Restaurant</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='reset.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:light,bold" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
+    <main class="container-fluid main-content">
+        <div class="login-logout">
+            <a href="{{ url_for('logout') }}">logout</a>
+        </div>
 
-    <Header>
-        <h1>Search Food</h1>
-    </Header>
+        <Header class="header-content">
+            <h1 class="page-name">Search Food</h1>
+        </Header>
 
-    <h2>Edit Restaurant</h2>
-
-    <form action="{{ url_for('edit_restaurant', restaurant_id = restaurant_id, restaurant = restaurant) }}" method="POST">
-        <label>Name:</label><br>
-        <input type="text" size="30" name="name" value="{{ restaurant.name }}">
-        <input type="submit" value="Edit"> 
-    </form>
-
-    <a href="{{ url_for('retrieve_restaurants') }}">Back to Catalog</a>
-    
+        <form action="{{ url_for('edit_restaurant', restaurant_id = restaurant_id, restaurant = restaurant) }}" method="POST">
+            <div class="form-group">
+                <h2 class="title-name">Edit Restaurant</h2>
+                <label>Name:</label><br>
+                <input class="form-control" type="text" size="30" name="name" value="{{ restaurant.name }}"> <br>
+                <input class="btn btn-common" type="submit" value="Edit">
+                <a class="btn btn-link" href="{{ url_for('retrieve_restaurants') }}">Back to Catalog</a>
+            </div>
+        </form>
+    </main>
 </body>
 </html>
