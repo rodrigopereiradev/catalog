@@ -14,7 +14,7 @@ from database_setup import Base, Restaurant, MenuItem, User
 
 '''
     This file is responsible for run the cruds and generates the response
-    send for catalog_items_app.wsgi
+    send for catalog_items_app.py
 '''
 
 # Connect to Database and create database session
