@@ -21,8 +21,7 @@ from database_setup import Base, Restaurant, MenuItem, User
 '''
 
 # Connect to Database and create database session
-engine = create_engine('postgresql://grader:q1w2e3r4@localhost/catalog',
-                       connect_args={'check_same_thread': False})
+engine = create_engine('postgresql://grader:q1w2e3r4@localhost/catalog')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
